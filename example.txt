@@ -1,3 +1,0 @@
-Hello, this is a file manipulation example in Python.
-This line was added using the 'w' (write) mode.
-This line was appended using the 'a' (append) mode.

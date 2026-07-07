@@ -1,36 +1,44 @@
-# Python File Manipulation
+# Internal Job Mobility Assistant
 
-This directory contains `file_manipulation.py`, a simple Python script that demonstrates the standard methods for interacting with files.
+Enterprise AI-powered internal job mobility, career planning, and resume analysis platform.
 
-## Overview
+## Tech Stack
 
-File handling is an essential part of programming. Python has several built-in functions for creating, reading, updating, and deleting files. 
+**Backend:** Python 3.10+, FastAPI, SQLAlchemy, SQLite, JWT, Google Gemini AI  
+**Frontend:** React, Vite, Tailwind CSS, React Router, Axios
 
-The primary utility used to interact with files is the `open()` function. It takes two primary parameters:
-1. **Filename**: The name or path of the file.
-2. **Mode**: How you want to interact with the file.
+## Quick Start
 
-### Key File Modes
-
-- `"r"` - **Read**: Default mode. Opens a file for reading. Returns an error if the file doesn't exist.
-- `"a"` - **Append**: Opens a file for appending data to the end of the file. Creates the file if it does not exist.
-- `"w"` - **Write**: Opens a file for writing. *Overwrites* any existing content in the file. Creates the file if it does not exist.
-- `"x"` - **Create**: Creates a specified file. Returns an error if the file already exists.
-
-## Running the Example
-
-Navigate to this directory in your terminal and run the script using Python:
+### Backend
 
 ```bash
-python file_manipulation.py
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env
+uvicorn app.main:app --reload
 ```
 
-## What the Script Does
+API docs: http://localhost:8000/docs
 
-The `file_manipulation.py` script showcases real-world examples by executing the following operations in order:
+### Frontend
 
-1. **Creates and Writes**: Opens a temporary file (`example.txt`) in write mode (`'w'`) and adds starting text. The `with` statement is used to ensure the file is safely closed when done.
-2. **Reads Entire File**: Re-opens `example.txt` in read mode (`'r'`) and prints its entire content to the console at once.
-3. **Appends Data**: Opens the file in append mode (`'a'`) and adds a new line without overwriting the previous text.
-4. **Reads Line by Line**: Re-opens the file to demonstrate iterating over a file line by line, which is extremely useful for processing large files efficiently.
-5. **Deletes File**: Uses the built-in `os` module to safely delete `example.txt`, maintaining a clean workspace.
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+App: http://localhost:5173
+
+## Demo Accounts
+
+| Role | Email | Password |
+|------|-------|----------|
+| Employee | employee@company.com | emp123456 |
+| HR Manager | hr@company.com | hr123456 |
+
+## Environment Variables
+
+Set `GEMINI_API_KEY` in `backend/.env` for full AI features. Without it, intelligent fallbacks are used.
